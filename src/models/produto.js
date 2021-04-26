@@ -15,7 +15,8 @@ const Produto = database.define('produto', {
     preco: {
         type: Sequelize.DOUBLE
     },
-    descricao: Sequelize.STRING
+    descricao: Sequelize.STRING,
+    quantidade: Sequelize.INTEGER
 })
  
 module.exports = Produto;

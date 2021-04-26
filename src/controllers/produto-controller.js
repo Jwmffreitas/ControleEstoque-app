@@ -6,13 +6,13 @@ module.exports = {
         res.json(produto)
     },
     async create(req, res) {
-        const {id, nome, preco, descricao } = req.body;
+        const {id, nome, descricao, preco, quantidade } = req.body;
 
         let data = {};
 
         let produto = Produto.findByPk(nome)
         if(!produto) {
-            data = {id, nome, preco, descricao}
+            data = {id, nome, descricao, preco, quantidade}
             produto = await Produto.create(data)
             return res.status(200).json(produto)
 
@@ -40,14 +40,15 @@ module.exports = {
         return res.json(produto)
     },
     async update(req, res) {
-        const {id, nome, preco, descricao } = req.body
-        const data = {nome, preco, descricao}
+        const {id, nome, descricao, preco, quantidade } = req.body
+        const data = {nome, descricao, preco, quantidade}
 
         const produto = await Produto.findByPk({id})
 
         produto.nome = data.nome
         produto.preco = data.preco
         produto.descricao = data.descricao
+        produto.quantidade = data.quantidade
 
         await produto.save()
     }
