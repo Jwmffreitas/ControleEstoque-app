@@ -38,5 +38,17 @@ module.exports = {
         produto.destroy()
 
         return res.json(produto)
+    },
+    async update(req, res) {
+        const {id, nome, preco, descricao } = req.body
+        const data = {nome, preco, descricao}
+
+        const produto = await Produto.findByPk({id})
+
+        produto.nome = data.nome
+        produto.preco = data.preco
+        produto.descricao = data.descricao
+
+        await produto.save()
     }
 }

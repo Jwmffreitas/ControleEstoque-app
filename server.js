@@ -22,7 +22,7 @@ app.listen(port, function() {
     const database = require('./db');
     const Produto = require('./src/models/produto');
     const produtos = await Produto.findAll();
-    //const produto = await Produto.findByPk(8);
+    //const produto = await Produto.findByPk(9);
     //console.log(produtos);
     //produto.nome = "Mouse Top"
  
