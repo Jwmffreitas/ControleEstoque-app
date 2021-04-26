@@ -4,6 +4,7 @@
   "description": "Projeto de controle de estoque para um processo seletivo usando NodeJS e ReactJS",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
