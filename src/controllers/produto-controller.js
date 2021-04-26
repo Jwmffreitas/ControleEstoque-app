@@ -1,7 +1,7 @@
 const Produto = require('../models/produto')
 
 module.exports = {
-    index(req, res) {
+    async index(req, res) {
         const produto = await Produto.findAll()
         res.json(produto)
     },
@@ -26,5 +26,10 @@ module.exports = {
         }else {
             return res.status(500).json(produto)
         }
+    },
+    async details(req, res) {
+        const {id} = req.params
+        const produto = await Produto.find({id})
+        res.json(produto)
     },
 }

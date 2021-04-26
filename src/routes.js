@@ -2,12 +2,18 @@ const express = require('express')
 
 const routes = express.Router()
 
-const Produto = require('./models/produto')
+const Produto = require('./controllers/produto-controller')
 
-routes.get('/', function(req, res) {
+routes.get('/',Produto.index)
+
+
+/*routes.get('/', function(req, res) {
     res.json({message: "Hello World"})
-})
+})*/
 
-routes.post('./api/produtos', Produto.create)
+// Rotas de produtos
+routes.post('/api/produtos', Produto.create)
+routes.get('/api/produtos', Produto.index)
+routes.get('/api/produtos.details', Produto.details)
 
 module.exports = routes
