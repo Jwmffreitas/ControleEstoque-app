@@ -1,4 +1,4 @@
-const Produto = require('../models/produto')
+const Produto = require('../models/produto');
 
 module.exports = {
     async index(req, res) {
@@ -12,16 +12,16 @@ module.exports = {
 
         let produto = Produto.findByPk(nome)
         if(!produto) {
-            /*data = {id, nome, preco, descricao}
+            data = {id, nome, preco, descricao}
             produto = await Produto.create(data)
-            return res.status(200).json(produto)*/
+            return res.status(200).json(produto)
 
-            const resultadoCreate = await Produto.create({
+            /*const resultadoCreate = await Produto.create({
             nome: 'mouse',
             preco: 10,
             descricao: 'Um mouse USB bonitão'
             })
-        console.log(resultadoCreate);
+            console.log(resultadoCreate);*/
 
         }else {
             return res.status(500).json(produto)
@@ -32,4 +32,11 @@ module.exports = {
         const produto = await Produto.find({id})
         res.json(produto)
     },
+    async delete(req, res) {
+        const {id} = req.params
+        const produto = await Produto.findByPk({id})
+        produto.destroy()
+
+        return res.json(produto)
+    }
 }
