@@ -4,7 +4,9 @@
   "description": "Projeto de controle de estoque para um processo seletivo usando NodeJS e ReactJS",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "server": "nodemon server.js",
+    "dev": "concurrently \"npm run server\" \" npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +35,7 @@
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
+    "concurrently": "^6.0.2",
     "nodemon": "^2.0.7"
   }
 }
