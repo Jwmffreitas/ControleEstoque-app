@@ -133,7 +133,7 @@ export default function ProdutosListagem() {
                     fullWidth
                     autoComplete="preco"
                 />
-                <TextareaAutosize aria-label="minimum height" rowsMin={5} placeholder="Descrição"  style={{width: "100%", marginTop: "30px", borderRadius: "0px", padding: "5px", fontSize: "15px"}}
+                <TextareaAutosize aria-label="minimum height" rowsMin={5} placeholder="Descrição*"  style={{width: "100%", marginTop: "30px", borderRadius: "0px", padding: "5px", fontSize: "15px"}}
                     required
                     id="descricao"
                     name="descricao"
