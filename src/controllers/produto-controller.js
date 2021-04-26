@@ -2,7 +2,8 @@ const Produto = require('../models/produto')
 
 module.exports = {
     index(req, res) {
-        res.json({message: "From produto-controller"})
+        const produto = await Produto.findAll()
+        res.json(produto)
     },
     async create(req, res) {
         const {id, nome, preco, descricao } = req.body;
