@@ -1,0 +1,27 @@
+{
+  "name": "controleestoque-app",
+  "version": "1.0.0",
+  "description": "Projeto de controle de estoque para um processo seletivo usando NodeJS e ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jwmffreitas/ControleEstoque-app.git"
+  },
+  "keywords": [
+    "node",
+    "node.js",
+    "react",
+    "react.js",
+    "materialui"
+  ],
+  "author": "João Vitor Freitas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jwmffreitas/ControleEstoque-app/issues"
+  },
+  "homepage": "https://github.com/Jwmffreitas/ControleEstoque-app#readme",
+  "dependencies": {}
+}
