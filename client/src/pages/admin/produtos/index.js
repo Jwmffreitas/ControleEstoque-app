@@ -95,7 +95,7 @@ export default function ProdutosListagem() {
               Lista de produtos
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              As imagens são aleatórias porque e eu não cadastro imagens no DB e um card sem imagem fica feio
+              {/*Descrição da página pode por aqui, ou n tbm*/}
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
@@ -106,7 +106,7 @@ export default function ProdutosListagem() {
                 </Grid>
                 <Grid item>
                   <Button variant="outlined" color="primary">
-                    Secondary action
+                    Deletar Estoque
                   </Button>
                 </Grid>
               </Grid>
