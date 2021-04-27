@@ -11,6 +11,7 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import TextField from '@material-ui/core/TextField';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import api from '../../../services/api'
 
 function Copyright() {
   return (
@@ -71,6 +72,8 @@ export default function ProdutosCadastrar() {
     const data = {nome, descricao, preco, quantidade}
 
     console.log(data)
+
+    const response = api.post('/api/produtos')
   }
 
   return (
