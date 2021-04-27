@@ -108,7 +108,7 @@ export default function ProdutosCadastrar() {
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary">
+                  <Button variant="outlined" color="primary" href="../produtos">
                     Cancelar
                   </Button>
                 </Grid>
