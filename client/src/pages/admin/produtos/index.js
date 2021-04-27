@@ -90,8 +90,8 @@ export default function ProdutosListagem() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
+                  <Button variant="contained" color="primary" href="/admin/produtos/cadastrar">
+                    Cadastrar Novo Produto
                   </Button>
                 </Grid>
                 <Grid item>
@@ -116,18 +116,18 @@ export default function ProdutosListagem() {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      Nome Produto
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe the content.
+                      Campo designado para a descrição do produto.
                     </Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
-                      View
+                      Deletar
                     </Button>
                     <Button size="small" color="primary" href="/admin/produtos/editar/:idProduto">
-                      Edit
+                      Editar
                     </Button>
                   </CardActions>
                 </Card>
