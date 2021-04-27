@@ -67,6 +67,12 @@ export default function ProdutosCadastrar() {
   const [preco, setPreco] = useState('')
   const [quantidade, setQuantidade] = useState('')
 
+  function handleSubmit() {
+    const data = {nome, descricao, preco, quantidade}
+
+    console.log(data)
+  }
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -88,7 +94,7 @@ export default function ProdutosCadastrar() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
+                  <Button variant="contained" color="primary" onClick={handleSubmit}>
                     Salvar
                   </Button>
                 </Grid>
