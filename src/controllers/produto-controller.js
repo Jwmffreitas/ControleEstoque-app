@@ -10,7 +10,7 @@ module.exports = {
 
         let data = {};
 
-        let produto = Produto.findByPk(nome)
+        let produto = Produto.findByPk(id)
         if(!produto) {
             data = {id, nome, descricao, preco, quantidade}
             produto = await Produto.create(data)

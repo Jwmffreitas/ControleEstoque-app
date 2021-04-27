@@ -68,12 +68,18 @@ export default function ProdutosCadastrar() {
   const [preco, setPreco] = useState('')
   const [quantidade, setQuantidade] = useState('')
 
-  function handleSubmit() {
+  async function handleSubmit() {
     const data = {nome, descricao, preco, quantidade}
 
     console.log(data)
 
-    const response = api.post('/api/produtos')
+    const response = await api.post('/api/produtos', data)
+
+    if(response.status == 200) {
+      window.location.href = "admin/produtos"
+    }else {
+      alert('Erro ao cadastrar produto')
+    }
   }
 
   return (
