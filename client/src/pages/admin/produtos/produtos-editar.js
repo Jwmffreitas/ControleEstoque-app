@@ -146,10 +146,10 @@ export default function ProdutosListagem() {
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          Controle de estoque
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
+          Isso foi difícil pra caramba kkkkk
         </Typography>
         <Copyright />
       </footer>
