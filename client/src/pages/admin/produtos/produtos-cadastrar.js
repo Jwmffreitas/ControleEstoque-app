@@ -76,9 +76,9 @@ export default function ProdutosCadastrar() {
     const response = await api.post('/api/produtos', data)
 
     if(response.status == 200) {
-      window.location.href = "admin/produtos"
-    }else {
-      alert('Erro ao cadastrar produto')
+      window.location.href = "api/produtos"
+    }else if(response.status == 500) {
+      window.alert('Esse produto já existe')
     }
   }
 

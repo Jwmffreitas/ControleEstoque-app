@@ -10,7 +10,7 @@ module.exports = {
 
         let data = {};
 
-        let produto = Produto.findByPk(id)
+        let produto = await Produto.findOne({where: {nome}})
         if(!produto) {
             data = {id, nome, descricao, preco, quantidade}
             produto = await Produto.create(data)
