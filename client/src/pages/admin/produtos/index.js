@@ -119,6 +119,11 @@ export default function ProdutosListagem() {
                     <Typography>
                       Campo designado para a descrição do produto.
                     </Typography>
+                    <Grid style={{textAlign: "right", marginTop: "5px"}}>
+                      <Typography variant="p">
+                          Quantidade: 05
+                      </Typography>
+                    </Grid>
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
@@ -127,6 +132,11 @@ export default function ProdutosListagem() {
                     <Button size="small" color="primary" href="/admin/produtos/editar/:idProduto">
                       Editar
                     </Button>
+                    <Grid style={{width: "100%", textAlign: "center"}}>
+                      <Typography variant="h6">
+                        R$ 10
+                      </Typography>
+                    </Grid>
                   </CardActions>
                 </Card>
               </Grid>
