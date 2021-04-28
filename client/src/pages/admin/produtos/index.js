@@ -77,13 +77,23 @@ export default function ProdutosListagem() {
   }, []);
 
   async function handleDelete(id) {
-    var apagar = await api.delete('/api/produtos/'+id)
+    var apagar = await api.delete(`/api/produtos/${id}`)
     console.log(apagar)
     if(apagar.status == 200) {
       window.location.href = '/admin/produtos'
     }else {
       alert('Error')
     }
+  }
+
+  async function handleTotalDelete() {
+    for(let i = 0; i < produtos.length; i++) {
+      let excluir = await api.delete(`/api/produtos/${produtos[i].id}`)
+      if(excluir.status == 500) {
+        alert('Error')
+      }
+    }
+    window.location.href = '/admin/produtos'
   }
 
   return (
@@ -115,7 +125,7 @@ export default function ProdutosListagem() {
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary">
+                  <Button variant="outlined" color="primary" onClick={handleTotalDelete}>
                     Deletar Estoque
                   </Button>
                 </Grid>
@@ -151,7 +161,7 @@ export default function ProdutosListagem() {
                     <Button size="small" color="primary" onClick={() => handleDelete(card.id)}>
                       Deletar
                     </Button>
-                    <Button size="small" color="primary" href={'/admin/produtos/editar/'+card.id}>
+                    <Button size="small" color="primary" href={`/admin/produtos/editar/${card.id}`}>
                       Editar
                     </Button>
                     <Grid style={{width: "100%", textAlign: "center"}}>
