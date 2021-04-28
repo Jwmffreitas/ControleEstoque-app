@@ -151,7 +151,7 @@ export default function ProdutosListagem() {
                     <Button size="small" color="primary" onClick={() => handleDelete(card.id)}>
                       Deletar
                     </Button>
-                    <Button size="small" color="primary" href="/admin/produtos/editar/:idProduto">
+                    <Button size="small" color="primary" href={'/admin/produtos/editar/'+card.id}>
                       Editar
                     </Button>
                     <Grid style={{width: "100%", textAlign: "center"}}>
