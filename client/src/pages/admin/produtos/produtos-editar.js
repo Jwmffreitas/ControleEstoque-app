@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import AppsIcon from '@material-ui/icons/Apps';
@@ -12,7 +12,7 @@ import Link from '@material-ui/core/Link';
 import TextField from '@material-ui/core/TextField';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import api from '../../../services/api'
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -69,19 +69,34 @@ export default function ProdutosCadastrar() {
   const [preco, setPreco] = useState('')
   const [quantidade, setQuantidade] = useState('')
 
-  const {idUsuario} = useParams()
+  const {idProduto} = useParams()
+
+  useEffect(() => {
+    async function getProduto() {
+      var response = await api.get('/api/produtos.details/'+idProduto)
+      console.log(response)
+      setNome(response.data.nome)
+      setDescricao(response.data.descricao)
+      setPreco(response.data.preco)
+      setQuantidade(response.data.quantidade)
+    }
+    getProduto()
+  }, [])
 
   async function handleSubmit() {
-    const data = {nome, descricao, preco, quantidade}
+    const data = {nome, descricao, preco, quantidade,
+    id:idProduto
+    }
 
     console.log(data)
-
-    const response = await api.post('/api/produtos', data)
-
-    if(response.status == 200) {
-      window.location.href = "../produtos"
-    }else if(response.status == 500) {
-      window.alert('Esse produto já existe')
+    if(nome != '' && descricao != '' && preco != '' && quantidade != '') {
+      const response = await api.put('/api/produtos', data)
+      console.log(response.status)
+      if(response.status == 200) {
+        window.location.href = "/admin/produtos"
+      }else {
+        alert('Não foi possível atualizar')
+      }
     }
   }
 
@@ -111,7 +126,7 @@ export default function ProdutosCadastrar() {
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary" href="../produtos">
+                  <Button variant="outlined" color="primary" href="/admin/produtos">
                     Cancelar
                   </Button>
                 </Grid>

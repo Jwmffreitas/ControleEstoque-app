@@ -29,7 +29,7 @@ module.exports = {
     },
     async details(req, res) {
         const {id} = req.params
-        const produto = await Produto.find({id})
+        const produto = await Produto.findByPk(id)
         res.json(produto)
     },
     async delete(req, res) {
@@ -43,13 +43,18 @@ module.exports = {
         const {id, nome, descricao, preco, quantidade } = req.body
         const data = {nome, descricao, preco, quantidade}
 
-        const produto = await Produto.findByPk({id})
+        const produto = await Produto.findByPk(id)
 
-        produto.nome = data.nome
-        produto.preco = data.preco
-        produto.descricao = data.descricao
-        produto.quantidade = data.quantidade
+        if(produto) {
+            produto.nome = data.nome
+            produto.preco = data.preco
+            produto.descricao = data.descricao
+            produto.quantidade = data.quantidade
 
-        await produto.save()
+            await produto.save()
+            return res.status(200).json(produto)
+        }else {
+            return res.status(500).json(produto)
+        }
     }
 }
