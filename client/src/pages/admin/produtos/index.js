@@ -74,13 +74,13 @@ export default function ProdutosListagem() {
       setProdutos(response.data)
     }
     loadProdutos()
-  }, [])
+  }, []);
 
   async function handleDelete(id) {
     var apagar = await api.delete('/api/produtos/'+id)
     console.log(apagar)
     if(apagar.status == 200) {
-      window.location.href = 'admin/produtos'
+      window.location.href = '/admin/produtos'
     }else {
       alert('Error')
     }
