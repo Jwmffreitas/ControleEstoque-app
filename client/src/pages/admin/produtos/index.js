@@ -76,6 +76,16 @@ export default function ProdutosListagem() {
     loadProdutos()
   }, [])
 
+  async function handleDelete(id) {
+    var apagar = await api.delete('/api/produtos/'+id)
+    console.log(apagar)
+    if(apagar.status == 200) {
+      window.location.href = 'admin/produtos'
+    }else {
+      alert('Error')
+    }
+  }
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -138,7 +148,7 @@ export default function ProdutosListagem() {
                     </Grid>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
+                    <Button size="small" color="primary" onClick={() => handleDelete(card.id)}>
                       Deletar
                     </Button>
                     <Button size="small" color="primary" href="/admin/produtos/editar/:idProduto">
