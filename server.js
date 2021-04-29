@@ -22,17 +22,9 @@ app.listen(port, function() {
     const database = require('./db');
     const Produto = require('./src/models/produto');
     const produtos = await Produto.findAll();
-    //const produto = await Produto.findByPk(11);
-    //console.log(produtos);
-    //produto.nome = "Mouse Top"
  
     try {
         const resultado = await database.sync();
-
-        //console.log(resultado);
-        //const resultadoUpdate = await produto.save()
-        //console.log(resultadoUpdate)
-        //produto.destroy()
     } catch (error) {
         console.log(error);
     }
