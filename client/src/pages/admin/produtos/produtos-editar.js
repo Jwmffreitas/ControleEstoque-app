@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import AppsIcon from '@material-ui/icons/Apps';
+import EditIcon from '@material-ui/icons/Edit';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -105,7 +105,7 @@ export default function ProdutosCadastrar() {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-          <AppsIcon className={classes.icon} />
+          <EditIcon className={classes.icon} />
           <Typography variant="h6" color="inherit" noWrap>
             Editar Produto
           </Typography>
