@@ -33,13 +33,13 @@ Esse projeto foi desenvolvido como desafio em um processo de admissão para uma 
 # Algumas imagens da aplicação:
 
 <h1 align="center">
-  <img alt="Home" src="https://media.discordapp.net/attachments/903284138923163668/903284230170243112/unknown.png?ex=660579fe&is=65f304fe&hm=a588844a3c1b9b2d7c17d62eda7f849982d2463cabbbab8bd8f35523844e1185&=&format=webp&quality=lossless&width=952&height=468" width="800px" />
+  <img alt="Home" src="https://github.com/Jwmffreitas/ControleEstoque-app/blob/main/public/img/listaDeProdutos.png" width="800px" />
 </h1>
 <h1 align="center">
-  <img alt="Cadastrar produto" src="https://media.discordapp.net/attachments/903284138923163668/903284155381608509/unknown.png?ex=660579ec&is=65f304ec&hm=a5d8a4dbd46468a6ebed5f1ee63353957c1a01dcd4d613b9038e077376bec085&=&format=webp&quality=lossless&width=960&height=452" width="800px" />
+  <img alt="Cadastrar produto" src="https://github.com/Jwmffreitas/ControleEstoque-app/blob/main/public/img/novoProduto.png" width="800px" />
 </h1>
 <h1 align="center">
-  <img alt="Editar produto" src="https://media.discordapp.net/attachments/903284138923163668/903284441760276500/unknown.png?ex=66057a31&is=65f30531&hm=a62a7ea63c01797455eda61ed965e0da977b1020bb7afb38a8aea735c0367ccb&=&format=webp&quality=lossless&width=960&height=450" width="800px" />
+  <img alt="Editar produto" src="https://github.com/Jwmffreitas/ControleEstoque-app/blob/main/public/img/editarProduto.png" width="800px" />
 </h1>
 
 ## :hammer: Tecnologias
